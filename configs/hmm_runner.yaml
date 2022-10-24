@@ -1,0 +1,11 @@
+log: False
+project_name: 'mpg_hmm_test'
+run_tag: null
+n_episodes: 1000
+update_rate: 100
+smf_dist: 0.005
+
+hmm_conf: 'configs/hmm_default.yaml'
+mpg_conf: 'configs/mpg_default.yaml'
+
+seed: null
