@@ -1,6 +1,7 @@
 import numpy as np
 from typing import Literal, Optional
 
+# available initialization for transition matrix
 INI_MODE = Literal['dirichlet', 'normal', 'uniform']
 
 
@@ -23,6 +24,20 @@ class CHMM:
             alpha: float = 1.0,
             seed: Optional[int] = None
     ):
+        """
+        Custom realization of CHMM method from paper https://arxiv.org/abs/1905.00507.
+        This is just a template, you can change this class as needed.
+
+        n_columns:
+        cells_per_columns: number of hidden state copies for an observation state, we also call them `columns`
+        lr: learning rate for matrix updates
+        batch_size: sequence size for learning
+        initialization: transition matrix initialization
+        sigma: parameter of normal distribution
+        alpha: parameter of alpha distribution
+        seed: seed for reproducibility, None means no reproducibility
+        """
+
         self.n_columns = n_columns
         self.cells_per_column = cells_per_column
         self.n_states = cells_per_column * n_columns
@@ -62,11 +77,20 @@ class CHMM:
             self.log_state_prior = np.log(self.state_prior)
 
     def observe(self, observation_state: int, learn: bool = True) -> None:
+        """
+        Here method gets new observation state and make matrix updates.
+        """
         raise NotImplementedError
 
     def predict_observation_states(self) -> np.ndarray:
+        """
+        Should return probabilities of observation states for the next timestep, which sum to 1.
+        """
         raise NotImplementedError
 
     def reset(self) -> None:
+        """
+        Here make preparations for starting new sequence of observations.
+        """
         self.is_first = True
         raise NotImplementedError

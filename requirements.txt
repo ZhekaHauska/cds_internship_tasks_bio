@@ -3,3 +3,4 @@ matplotlib
 seaborn
 wandb
 scipy
+PyYAML

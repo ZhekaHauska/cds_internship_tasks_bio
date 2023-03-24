@@ -51,6 +51,8 @@ class HMMRunner:
                     obs_state = self.mpg.char_to_num[letter]
 
                 observation_probs = self.hmm.predict_observation_states()
+
+                # learn on new observed state
                 self.hmm.observe(obs_state, learn=True)
 
                 # metrics
