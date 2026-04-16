@@ -70,12 +70,7 @@ RUN_CONF=configs/runner/gridworld_random.yaml python start_script.py
 - остальное можно оставить как есть
 
 ### configs/environment/gridworld/setups/free_10x10_no_landmarks.yaml
-Описание поля 10x10:
-- `room[0]` — цвета клеток
-- `room[1]` — награды на клетках
-- `room[2]` — терминальные состояния
-- `room[3]` — ориентиры (landmarks)
-- `start_position` — начальная позиция агента (если null, то позиция выбирается случайно каждый эпизод)
+Описание поля 10x10. Тут всё можно оставить как есть.
 
 ### configs/agent/random/default.yaml
 Конфигурация агента. Для `RandomAgent` пуст, но для вашего агента будет содержать его гиперпараметры.
