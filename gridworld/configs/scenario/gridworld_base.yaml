@@ -1,0 +1,14 @@
+- condition: ['episodes', 'equal', 1000, 'norepeat']  # episodes to run
+  check_every: 'episodes'
+  action: stop_runner
+  params: {}
+- condition: ['steps', 'equal', 100, 'repeat']  # max steps in one episode
+  check_every: 'steps'
+  action: stop_episode
+  params: {}
+- condition: [ 'episodes', 'equal', 0, 'norepeat' ]  # start logging by default
+  check_every: 'episodes'
+  action: switch_logging
+  params: {}
+
+

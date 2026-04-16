@@ -1,0 +1,26 @@
+logger: aim  # aim, wandb, null
+project_name: test
+#repo: /path/to/aim_repo
+repo: ./
+tags: []  # shared run tags
+#run_tag: some_new_feature  # custom tag
+
+action_inertia: 1  # how many times we repeat chosen action
+frame_skip: 0  # how many frames to skip
+strategies: null  # fixed action sequence lists (for debugging)
+observe_actions: true  # pass actions to agent
+reward_free: true  # if true, generate random actions (override agent's strategy)
+
+setup: configs/environment/gridworld/setups/free_10x10_no_landmarks.yaml
+
+scenario: 'configs/scenario/gridworld_base.yaml'
+env_conf: 'configs/environment/gridworld/pomdp.yaml'
+agent_conf: 'configs/agent/random/default.yaml'
+metrics_conf: 'configs/metrics/gridworld_pomdp.yaml'
+
+# use fixed set of seeds (recommended)
+seed: 4432
+#seed: 3424
+#seed: 5231911
+#seed: 33311
+#seed: 90548

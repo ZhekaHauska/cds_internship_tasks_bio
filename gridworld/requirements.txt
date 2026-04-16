@@ -1,0 +1,9 @@
+numpy
+pyyaml
+pygame
+matplotlib
+seaborn
+pillow
+scipy
+aim
+imageio

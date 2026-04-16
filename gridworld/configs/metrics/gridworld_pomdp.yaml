@@ -1,0 +1,26 @@
+setup:
+  class: ImageMetrics
+  params:
+    metrics:
+      agent/setup:
+        att: environment.render
+    update_step: current_setup_id
+    update_period: 1
+    log_step: current_setup_id
+    log_period: 1
+    log_fps: 5
+
+step_scalar_metrics:
+  class: ScalarMetrics
+  params:
+    metrics:
+      episodes/surprise:
+        agg: np.mean
+        att: agent.surprise
+      episodes/accuracy:
+        agg: np.mean
+        att: agent.accuracy
+    update_step: steps
+    update_period: 1
+    log_step: episodes
+    log_period: 50

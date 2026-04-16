@@ -1,0 +1,14 @@
+observation_radius: 0
+collision_hint: false
+collision_reward: -0.1
+default_reward: -0.02
+random_floor_colors: true  # generate random colors (ignores colors from setup config, except for landmarks)
+n_random_colors: 10
+markov_radius: 0
+blackout_prob: [0.0, 0.1]  # blackout start and end probs
+headless: true
+# fix seed, otherwise use seed from runner
+# seed: 192410450
+# seed: 257209842
+# seed: 223
+# seed: 123
