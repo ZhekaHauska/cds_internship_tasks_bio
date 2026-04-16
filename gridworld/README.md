@@ -103,7 +103,7 @@ RUN_CONF=configs/runner/gridworld_random.yaml python start_script.py
 **Что нужно сделать:**
 
 1. **Создайте новый класс** в `my_lib/agents.py`, унаследовав его от `BaseAgent` (`my_lib/base.py`).
-2. **Реализуйте метод `observe()`** — в нём вычисляется `prediction` (распределение вероятностей следующего наблюдения). Метрики `accuracy` и `surprise` вычисляются так же, как в `RandomAgent`.
+2. **Реализуйте метод `observe()`** — в нём вычисляется `prediction` (распределение вероятностей следующего наблюдения). Метрики `accuracy` и `surprise` вычисляются так же, как в `RandomAgent`. Обратите внимание, что агент получает наблюдения текущего шага и действие предыдущего и должен предсказать текущий шаг.
 3. **Зарегистрируйте агента** в `TestRunner.make_agent()` (`start_script.py:11-17`), добавив новый `agent_type` (например, `'my_agent'`).
 4. **Создайте конфиг** агента в `configs/agent/ваше_имя/default.yaml`.
 5. **Обновите `configs/runner/gridworld_random.yaml`**: измените `agent_conf` на путь к вашему конфигу и `agent_type` на название вашего агента.
